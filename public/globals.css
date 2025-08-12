@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+
+/* app/globals.css */
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src:
+    url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sofia-Pro';
+  src:
+    url('/fonts/sofia_pro_regular_az.woff2') format('woff2'),
+    url('/fonts/sofia_pro_regular_az.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #0b324f;
+  --secondary: #00a2e7;
+  --background: #f2fafd;
+  --wils_orang: #ef6c33;
+  --foreground: #0c3b5e;
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-Sofia-Pro: 'Sofia-Pro', sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-wils_orang: var(--wils_orang);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-satoshi: var(--font-satoshi);
+  --font-Sofia: var(--font-Sofia-Pro);
+}
+
+.container {
+  width: 100%;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 48rem /* 768px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 64rem /* 1024px */;
+  }
+  @media (width >= 80rem /* 1280px */) {
+    max-width: 1240px /* 1240px */;
+  }
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 1240px /* 1240px */;
+  }
+}
+
+body {
+  font-family: 'Satoshi-Regular';
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sofia-Pro';
+}
+
+.Grad_BG {
+  background-image: linear-gradient(150deg, #ee6c4d 20%, #ef6c33 15%, #fce8e3 60%);
+}
+
+.primary_btn {
+  @apply bg-transparent border-secondary border-2 text-secondary hover:text-white md:px-[60px] px-5 md:py-[18.5px] py-3 rounded-lg md:text-xl text-base font-bold inline-flex text-center justify-center relative overflow-hidden transition-all duration-500 ease-in-out;
+}
+.primary_btn::before,
+.primary_btn::after {
+  @apply content-[''] bg-secondary w-0 h-full absolute top-0 transition-all duration-500 ease-in-out;
+  z-index: 10;
+}
+.primary_btn::before {
+  @apply left-0;
+}
+
+.primary_btn::after {
+  @apply right-0;
+}
+
+.primary_btn:hover::before,
+.primary_btn:hover::after {
+  @apply w-1/2;
+}
+
+.secondary_btn {
+  @apply bg-wils_orang text-white md:px-[60px] px-5 md:py-[18.5px] py-3 
+    rounded-lg md:text-xl text-base font-bold inline-flex text-center justify-center 
+    relative overflow-hidden transition-all duration-500 ease-in-out;
+}
+
+.secondary_btn::before,
+.secondary_btn::after {
+  @apply content-[''] bg-primary w-0 h-full absolute top-0 transition-all duration-500 ease-in-out;
+  z-index: 10;
+}
+
+.secondary_btn::before {
+  @apply left-0 rounded-l-lg;
+}
+
+.secondary_btn::after {
+  @apply right-0 rounded-r-lg;
+}
+
+.secondary_btn:hover::before,
+.secondary_btn:hover::after {
+  @apply w-1/2;
+}
