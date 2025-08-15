@@ -3,7 +3,7 @@ import React from 'react'
 import type { CallToActionBlock as CTABlockProps } from '@/payload-types'
 
 import RichText from '@/components/RichText'
-import { CMSLink } from '@/components/Link'
+//import { CMSLink } from '@/components/Link'
 
 export const CallToActionBlock: React.FC<CTABlockProps> = ({ links, richText }) => {
   return (
@@ -13,9 +13,9 @@ export const CallToActionBlock: React.FC<CTABlockProps> = ({ links, richText }) 
           {richText && <RichText className="mb-0" data={richText} enableGutter={false} />}
         </div>
         <div className="flex flex-col gap-8">
-          {(links || []).map(({ link }, i) => {
+          {/* {(links || []).map(({ link }, i) => {
             return <CMSLink key={i} size="lg" {...link} />
-          })}
+          })} */}
         </div>
       </div>
     </div>
