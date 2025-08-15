@@ -23,7 +23,7 @@ export default function FAQClient({ title, description, faqs }: FAQBlockProps) {
           </p>
         </div>
         <div className="md:w-[60%] w-full flex flex-col gap-6">
-          {faqs.map((faq, index) => (
+          {faqs?.map((faq, index) => (
             <div
               key={faq.id}
               onClick={() => toggleFAQ(index)}
